@@ -1,0 +1,46 @@
+{
+  "name": "@mozaiq/nest-auth",
+  "version": "0.0.1",
+  "description": "Nest Auth module based on jwt",
+  "author": "Peter Reisz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mozaiq/nest-config"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^5.0.0"
+  },
+  "dependencies": {
+    "@nestjs/jwt": "^0.3.0",
+    "@nestjs/passport": "^5.1.0",
+    "@nestjs/swagger": "^2.5.1",
+    "bcrypt": "^3.0.4",
+    "class-transformer": "^0.2.0",
+    "class-validator": "^0.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "5.6.2",
+    "@types/bcrypt": "^3.0.0",
+    "@types/node": "7.10.2",
+    "@types/passport-jwt": "^3.0.1",
+    "husky": "0.14.3",
+    "lint-staged": "7.3.0",
+    "prettier": "1.16.3",
+    "typescript": "2.9.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
